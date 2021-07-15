@@ -15741,6 +15741,7 @@
 			files = (
 			);
 			inputFileListPaths = (
+				"$(SRCROOT)/secrets-manifest.xcfilelist",
 			);
 			inputPaths = (
 			);
@@ -16374,6 +16375,7 @@
 			files = (
 			);
 			inputFileListPaths = (
+				"$(SRCROOT)/secrets-manifest.xcfilelist",
 			);
 			inputPaths = (
 			);
