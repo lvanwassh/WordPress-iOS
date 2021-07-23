@@ -1,0 +1,22 @@
+use_plugins: &use_plugins
+    plugins:
+      - automattic/bash-cache#add/cocoapods-support: ~
+      - automattic/git-s3-cache#add/vm-host-support:
+          bucket: "a8c-repo-mirrors"
+          repo: "wordpress-mobile/wordpress-ios/"
+
+steps:
+
+  #################
+  # Build the CocoaPods Base Cache
+  #################
+  - label: ":cocoapods: Rebuild CocoaPods cache"
+    key: "build"
+    command: |
+      echo "--- :cocoapods: Downloading CocoaPods"
+      bundle install
+      bundle exec pod install
+
+    env:
+      IMAGE_ID: xcode-12.5.1
+    <<: *use_plugins
