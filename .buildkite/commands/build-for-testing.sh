@@ -15,7 +15,7 @@ restore_cache "$BUILDKITE_PIPELINE_SLUG-specs-repos"
 restore_cache "$BUILDKITE_PIPELINE_SLUG-global-pod-cache"
 
 restore_cache "$(hash_file Podfile.lock)"
-bundle exec pod install || bundle exec pod install --repo-update --verbose
+bundle exec pod check || bundle exec pod install || bundle exec pod install --repo-update --verbose
 save_cache Pods "$(hash_file Podfile.lock)"
 
 save_cache ~/.cocoapods "$BUILDKITE_PIPELINE_SLUG-specs-repo"
