@@ -17,10 +17,10 @@ brew install openjdk@11
 sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
 
 echo "--- :rubygems: Setting up Gems"
-bundle install
+install_gems
 
 echo "--- :cocoapods: Setting up Pods"
-bundle exec pod install
+install_cocoapods
 
 echo "--- 🧪 Testing"
 rake mocks &
